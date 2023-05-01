@@ -1,26 +1,25 @@
 import math
 
-n=0
+n = 0
 precision = 4
 startingValue = 1
 x = startingValue
 
 def thingToIterate(x):
-    return math.acos(math.pow(math.e, -x))
-
-
+    return math.acos(math.exp(-x))
 
 iteration = 1
 previousIteration = ""
 
+print("\n\tIteration\tValue")
 while iteration != previousIteration:
     x = thingToIterate(x)
-    print(iteration)
+    print("\t", n, "\t\t", iteration)
     n += 1
     previousIteration = iteration
     iteration = round(x, precision)
 
 print()
 print("Answer:", iteration)
-print("Took", n, "iterations")
+print("Took", n-1, "iterations to find,", n, "to prove.")
 print()
